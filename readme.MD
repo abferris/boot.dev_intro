@@ -29,15 +29,11 @@ to run an individual test, run
 python3 -m unittest src.tests.**test_name.py**
 
 
-
-
-
-
 ## Folder Structure
 
         introduction/
         ├── .gitignore
-        ├── run_test.sh
+        ├── run_tests.sh
         ├── __init__.py
         ├── README.md
         └── src/

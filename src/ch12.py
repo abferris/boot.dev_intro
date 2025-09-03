@@ -18,7 +18,7 @@ def level_one_main():
 # Don't edit below this line
 
 
-def get_player_record(player_id):
+def get_player_record_1(player_id):
     if player_id == 1:
         return {"name": "Slayer", "level": 128}
     if player_id == 2:
@@ -30,15 +30,15 @@ def get_player_record(player_id):
 # 2 Raising your own exceptions
 # If a player_id that doesn't exist is passed into the get_player_record function, we need to raise (but not handle) our own error to alert the caller of our function that the player they are looking for doesn't exist. The exception should say player id not found.
 
-def get_player_record(player_id):
-    try:
-        if player_id == 1:
-            return {"name": "Slayer", "level": 128}
-        if player_id == 2:
-            return {"name": "Dorgoth", "level": 300}
-        if player_id == 3:
-            return {"name": "Saruman", "level": 4000}
-        raise Exception("Nonexistent player ID!")
+def get_player_record_2(player_id):
+    if player_id == 1:
+        return {"name": "Slayer", "level": 128}
+    if player_id == 2:
+        return {"name": "Dorgoth", "level": 300}
+    if player_id == 3:
+        return {"name": "Saruman", "level": 4000}
+    raise Exception("Nonexistent player ID!")
+
     
 # 3 Different Types of Exceptions
 # Take a look at the get_player_record function. It raises an exception for negative player_ids.
@@ -50,15 +50,14 @@ def get_player_record(player_id):
 # If any other exception happens, returns the error object itself. 
 def process_player_record(player_id):
     try:
-        return get_player_record(player_id)
+        return get_player_record_3(player_id)
     except IndexError:
-        return "index is too high"
+        raise Exception("index is too high")
     except Exception as e:
-        return e
-
+        raise e
 # Don't edit below this line
 
-def get_player_record(player_id):
+def get_player_record_3(player_id):
     if player_id < 0:
         raise Exception("negative ids not allowed")
     players = [
@@ -78,5 +77,5 @@ def get_player_record(player_id):
 def purchase_item(price, gold_available):
     if price > gold_available:
         raise Exception("not enough gold")
-    else
+    else:
         return gold_available - price

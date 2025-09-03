@@ -2,7 +2,7 @@
 
 # 1 Unit Tests: teaching user how to check their unit tests on boot.dev platform
 def total_xp(level,xp_to_add):
-    return level*10+xp_to_add
+    return level*100+xp_to_add
 
 # 2 Debugging: Teaching users how to log things and run them to figure out what you're doing
 def take_magic_damage(health, resist, amp, spell_power):  

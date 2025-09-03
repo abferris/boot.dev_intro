@@ -28,11 +28,12 @@ def print_status(player_health):
     # Complete the print_status function.
     # If player_health is less than or equal to 0, print the text dead to the console.
     # Afterwards, whether or not the player is dead, print the text status check complete to the console.
-    if player_health > 0:
-        print('Dead')
+    if player_health <= 0:
+        output = f'Dead'
     else :
-        print("Alive")
-    print('status check complete')
+        output = f"Alive"
+    output += f'\nstatus check complete\n'
+    return output
 
 # 5 If Practice
 
@@ -49,21 +50,21 @@ def player_status(health):
     # Complete the player_status function. If the player's health is less than or equal to 0, return the string: 'dead' Otherwise, if it's less than or equal to 5 return the string: 'injured' Otherwise, return the string: 'healthy'
     if health <= 0:
         return 'dead'
-    elif health < 5:
+    elif health <= 5:
         return 'injured'
     return 'healthy'
 
 # 7 If-Else Practice
 
-def check_high_score(current_player_name, high_scoring_player_name):
-    if current_health == high_scoring_player_name:
+def check_high_score_first(current_player_name, high_scoring_player_name):
+    if current_player_name == high_scoring_player_name:
         return "You are the highest scoring player!"
     else:
         return "You are not the highest scoring player!"
 
 # 8 If-Else Practice
 
-def check_high_score(player_name, high_scoring_player_name, low_scoring_player_name):
+def check_high_score_second(player_name, high_scoring_player_name, low_scoring_player_name):
     # Complete the check_high_score function. If the player_name matches the high score name, return the string: "high" Otherwise, if it's the low scorer, return the string: "low". Otherwise, return the string: "neither"
     if player_name == high_scoring_player_name:
         return "high"
@@ -84,7 +85,7 @@ def check_high_score(player_name, high_scoring_player_name, low_scoring_player_n
 
 def does_attack_hit(attack_roll, armor_class, mod=0):
     total = attack_roll+mod
-    return attack_roll != 1 and total >= armor_class or attack_roll == 20
+    return (attack_roll != 1 and total >= armor_class) or attack_roll == 20
 
 # 10 Should Serve Drinks
 # In Fantasy Quest, players can go to a town's local pub. Drinking virtual beer refills their stamina!
@@ -96,7 +97,7 @@ def does_attack_hit(attack_roll, armor_class, mod=0):
 # The time is between 5 and 10 o'clock (inclusive). assuming integer 0-12
 
 def should_serve_customer(customer_age:int, on_break:bool, time):
-    is_open time =< 10 and time >= 5
+    is_open =  (time <= 10) and (time >= 5)
     return  not on_break and customer_age >=21 and  is_open
 
 # 11 Mount Rental

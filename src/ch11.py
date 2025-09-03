@@ -4,14 +4,7 @@
 # Complete the remove_duplicates function. It should take a list of spells that a player has learned and return a new List where there is at most one of each title. You can accomplish this in at least two ways:
 # create a second list and if the spell isn't in the list, add it, then sort it (optional use a set)
 
-def remove_duplicates1(spells:list):
-    simplified_spells = list()
-    for spell in spells:
-        if spell not in simplified_spells:
-            simplified_spells.append(spell)
-    return sorted(simplified_spells)
-
-def remove_duplicates2(spells:list):
+def remove_duplicates(spells:list):
     condensed_spells = set(spells)
     new_spell_list = sorted(list(condensed_spells))
     return new_spell_list

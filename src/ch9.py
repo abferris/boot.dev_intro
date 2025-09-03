@@ -107,15 +107,11 @@ def get_item_counts(items):
 # We need to check if a player has a specific item in their inventory. In the contains_leather_scraps function, use the no-index syntax to iterate over each item in items. If you find an item called Leather Scraps, set the found variable to True.
 
 def contains_leather_scraps(items):
-    found = False
-    # don't touch above this line
 
-    # would usually use while loop for this
     for item in items:
-        found  = found or item == "Leather Scraps"
-
-    # don't touch below this line
-    return found
+        if item == "Leather Scraps":
+            return True
+    return False
 
 # 10 Find the Increase
 
@@ -202,7 +198,7 @@ def is_top_weapon(weapon):
 # Delete the last two strongholds from the list
 
 def trim_strongholds(strongholds):
-    del strongholds[0:2]
+    del strongholds[0:1]
     del strongholds[-2:]
     return strongholds
 
@@ -242,19 +238,20 @@ def reverse_list(items):
 # A list containing the number of dang words that were removed from each message at that particular index.
 def filter_messages(messages):
     output = []
-    counter = 0
+    counts = []
     for message in messages:
         words = message.split()
-        print(words)
+        count = 0
         i = 0
         while i < len(words):
-            if words[i] ==  'dang':
-                counter += 1
+            if words[i] == "dang":
+                count += 1
                 del words[i]
             else:
                 i += 1
-        output.append(" ".join(words))   
-    return output
+        output.append(" ".join(words))
+        counts.append(count)
+    return output, counts
 
 # 21 Even Teams
 # Complete the split_players_into_teams function.
@@ -280,12 +277,9 @@ def split_players_into_teams(players):
 # Assume that the recipe list won't contain any duplicates (recipes require only one ingredient of each kind).
 
 def check_ingredient_match(recipe, ingredients):
-    needed,recipe_len = recipe, len(recipe)
-    for item in needed:
-        if item in ingredients:
-            needed.remove(item)
-    percent = round(len(output)/ recipe_len *100,2)
-    return percent output
+    missing = [item for item in recipe if item not in ingredients]
+    percent = 100 * (1 - len(missing)/len(recipe))
+    return percent, missing
 
 
 

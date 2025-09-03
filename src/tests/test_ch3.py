@@ -3,7 +3,7 @@ print('running ch3 tests')
 import unittest
 from io import StringIO
 from contextlib import redirect_stdout
-import introduction.ch3 as three
+import src.ch3 as three
 
 def capture_output(func, *args, **kwargs):
     buffer = StringIO()

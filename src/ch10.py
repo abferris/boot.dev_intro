@@ -32,7 +32,7 @@ def get_character_record(name, server, level, rank):
     #     "rank": 2,
     #     "id": f"{name}#{server}",
     # }
-def get_character_record(name, server, level, rank):
+def get_character_record_re(name, server, level, rank):
     return {
         "name": name,
         "server": server,

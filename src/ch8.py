@@ -11,7 +11,7 @@ def print_numbers():
 # In the print_numbers function, write a for-loop from scratch that logs the numbers 0-199 to the console.
 
 def print_numbers_two():
-    for i in range(0,199)
+    for i in range(0,199):
         print(i)
 
 # 3 Loops Practice Two: For loops starting not at zero
@@ -63,7 +63,7 @@ def sum_of_odd_numbers(end):
 # Return the new current_health after regeneration stops.
 
 def regenerate(current_health, max_health, enemy_distance):
-    while current_health < max_health and enemy_distance > 3
+    while current_health < max_health and enemy_distance > 3:
         current_health += 1
         enemy_distance -= 2
 
@@ -78,7 +78,7 @@ def regenerate(current_health, max_health, enemy_distance):
 def countdown_to_start():
     i = 10
     print("Counting down to match start:")
-    while i > 1
+    while i > 1 :
         print(f"{i}...")
         i -= 1
     print(f"{i}... Fight!")
@@ -88,7 +88,13 @@ def countdown_to_start():
 # It accepts a level (integer) and returns the total XP a player has gained so far.
 
 def calculate_experience_points(level):
-    return (level - 1) * 5
+    i = 1
+    output = 0
+    while i < level:
+        output += i*5
+        i+=1
+    return output
+
 
 # 10 Meditate
 # Complete the meditate function using a while loop. It accepts:
@@ -106,11 +112,11 @@ def calculate_experience_points(level):
 
 def meditate(mana, max_mana, num_potions):
     meditation = True
-    while meditation
-        if mana == max_mana or num_potions = 0:
+    while meditation:
+        if mana == max_mana or num_potions == 0:
             meditation = False
-        else 
+        else :
             num_potions -= 1
             mana += 1
-
+    return [mana, num_potions]
  

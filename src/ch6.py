@@ -24,7 +24,7 @@ def get_hurt(current_health, damage):
 
 # 4 Scientific notation
 def max_players_on_server():
-    return 1.0244e18,1.0244e19,1.0244e20
+    return 1.024e18,1.024e19,1.024e20
     # Complete the max_players_on_server function. It takes no inputs, but simply returns 3 static numbers:
     # The max players on a "small" server: 1,024,000,000,000,000,000 (1.024e18)
     # The max players on a "medium" server: 10,240,000,000,000,000,000
@@ -69,14 +69,13 @@ def calculate_guild_perms(*users):
     perms = 0b0000
     for user in users :
         perms = perms | user
-    return perms, bin(perms)
+    return perms
 
 # 7 damage meter
 
 def calculate_dps(damage, time):
     dps = damage / time
-    print(f"Damage per second: {dps}")
-    print("=====================================")
+    return round(dps,3)
     # not supposed to edit function. Supposed to fix test cases:
     # calculate_dps(8, 000, 000, 45) -> calculate_dps(8_000_000, 45)
     # calculate_dps(10, 000, 000, 49) -> calculate_dps(10_000_000, 49)
@@ -86,4 +85,3 @@ def calculate_dps(damage, time):
 def binary_string_to_int(num_servers, num_players, num_admins):
     # Complete the binary_string_to_int function. It takes three binary strings as input and returns each of them in the same order as integers. Each integer is the numerical value of the string when interpreted as binary.
     return int(num_servers,2), int(num_players,2), int(num_admins,2)
-
